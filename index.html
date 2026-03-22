@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderAI Travel Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .planner {
+            margin: 20px 0;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to WanderAI</h1>
+        <p>Your personalized travel planner</p>
+    </header>
+    <div class="planner">
+        <input type="text" id="destination" placeholder="Enter your destination">
+        <button onclick="addDestination()">Add Destination</button>
+        <ul id="destinationList"></ul>
+    </div>
+    <script>
+        function addDestination() {
+            const input = document.getElementById("destination");
+            const destination = input.value;
+            if (destination) {
+                const list = document.getElementById("destinationList");
+                const li = document.createElement("li");
+                li.textContent = destination;
+                list.appendChild(li);
+                input.value = '';
+            }
+        }
+    </script>
+</body>
+</html>
